@@ -104,7 +104,7 @@ normal=$(tput sgr0)
 for i in ${!options[@]}; do
   BUNDLE=$(echo ${options[i]//[[:blank:]]/} | tr '[:upper:]' '[:lower:]')
   FILE="$SOURCE/brewfiles/$BUNDLE.rb"
-  # [[ "${choices[i]}" ]] && { echo "${bold}===> Install bundle $FILE${normal}"; brew bundle --file $FILE }
+  [[ "${choices[i]}" ]] && { echo "${bold}===> Install bundle $FILE${normal}"; brew bundle --file $FILE }
 done
 
 # oh-my-zsh
