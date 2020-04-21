@@ -18,9 +18,15 @@ cask 'firefox-developer-edition'
 
 # platform tools
 cask 'docker'
-brew 'buildpack/tap/pack'
+
+tap 'buildpack/tap'
+brew 'pack'
+
 cask 'android-platform-tools'
-brew 'heroku/brew/heroku'
+
+tap 'heroku/brew'
+brew 'heroku'
+
 brew 'awscli'
 brew 'aws-elasticbeanstalk', link: false
 brew 'node'
