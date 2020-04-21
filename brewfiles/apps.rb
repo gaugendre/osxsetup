@@ -41,10 +41,10 @@ cask 'smcfancontrol'
 cask 'gfxcardstatus'
 
 # appstore
-brew 'mas'
+# brew 'mas'
 # mas 'Keynote', id: 409183694
 # mas 'Numbers', id: 409203825
 # mas 'Pages', id: 409201541
 
-mas 'Amphetamine', id: 937984704
-mas 'Messenger', id: 1480068668
+# mas 'Amphetamine', id: 937984704
+# mas 'Messenger', id: 1480068668
