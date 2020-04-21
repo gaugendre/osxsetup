@@ -1,0 +1,6 @@
+cask 'adobe-creative-cloud'
+cask 'handbrake'
+cask 'gimp'
+cask 'skyfonts'
+cask 'xquartz'
+cask 'inkscape'
