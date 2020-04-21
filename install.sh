@@ -93,6 +93,9 @@ for i in ${!options2[@]}; do
 done
 echo "$msg"
 
+bold=$(tput bold)
+normal=$(tput sgr0)
+
 ask_for_sudo() {
   # Ask for the administrator password upfront
   sudo -v
@@ -106,15 +109,13 @@ ask_for_sudo() {
   done &> /dev/null &
 }
 
+echo "${bold}Enter your sudo password for later use${normal}"
 ask_for_sudo
 
 # homebrew
 [ -x "$(command -v brew)" ] || /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 
 brew tap homebrew/bundle
-
-bold=$(tput bold)
-normal=$(tput sgr0)
 
 echo "${bold}===> Install bundle $SOURCE/brewfiles/base.rb${normal}"
 brew bundle --file $SOURCE/brewfiles/base.rb
