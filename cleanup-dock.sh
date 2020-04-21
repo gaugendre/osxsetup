@@ -1,17 +1,15 @@
 #!/bin/bash
 set -euo pipefail
-IFS=$'\n\t'
+IFS=$'\r\n'
 
-dockutil --remove 'Siri' --no-restart
-dockutil --remove 'Safari' --no-restart
-dockutil --remove 'Mail' --no-restart
-dockutil --remove 'Contacts' --no-restart
-dockutil --remove 'Calendar' --no-restart
-dockutil --remove 'Notes' --no-restart
-dockutil --remove 'Reminders' --no-restart
-dockutil --remove 'Maps' --no-restart
-dockutil --remove 'Photos' --no-restart
-dockutil --remove 'Messages' --no-restart
-dockutil --remove 'FaceTime' --no-restart
-dockutil --remove 'App Store' --no-restart
-dockutil --remove 'System Preferences'
+apps=($(dockutil --list | grep -Ev 'Launchpad|Downloads' | awk -F '\t' '{ print $1 }'))
+
+for i in ${!apps[@]}; do
+  app=${apps[$i]}
+  echo "Removing $app from dock"
+  if [[ ${#apps[@]} != $((i+1)) ]]; then
+    dockutil --remove $app --no-restart
+  else
+    dockutil --remove $app
+  fi
+done

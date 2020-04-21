@@ -8,13 +8,6 @@ SOURCE="."
 # BRANCH=${BRANCH:-master}
 # SOURCE=${SOURCE:-https://raw.githubusercontent.com/$REPO/$BRANCH}
 
-# brew
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
-
-brew tap homebrew/bundle
-brew bundle --file $SOURCE/brewfiles/base.rb
-bash $SOURCE/cleanup-dock.sh
-
 # https://serverfault.com/questions/144939/multi-select-menu-in-bash-script
 CHECKED="✔"
 
@@ -97,6 +90,13 @@ for i in ${!options2[@]}; do
   [[ "${choices2[i]}" ]] && { printf " %s" "${options2[i]}"; msg=""; }
 done
 echo "$msg"
+
+# homebrew
+[ -x "$(command -v brew)" ] || /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+
+brew tap homebrew/bundle
+brew bundle --file $SOURCE/brewfiles/base.rb
+bash $SOURCE/cleanup-dock.sh
 
 bold=$(tput bold)
 normal=$(tput sgr0)
