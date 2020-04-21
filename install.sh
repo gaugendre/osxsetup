@@ -57,12 +57,14 @@ echo "$msg"
 msg=""
 
 options2=(
+  "Cleanup the Dock"
   "Oh My ZSH!"
   "RVM: Ruby Version Manager"
   "nvm: Node Version Manager"
 )
 
 choices2=(
+  ""
   ""
   ""
   ""
@@ -96,7 +98,6 @@ echo "$msg"
 
 brew tap homebrew/bundle
 brew bundle --file $SOURCE/brewfiles/base.rb
-bash $SOURCE/cleanup-dock.sh
 
 bold=$(tput bold)
 normal=$(tput sgr0)
@@ -104,11 +105,17 @@ normal=$(tput sgr0)
 for i in ${!options[@]}; do
   BUNDLE=$(echo ${options[i]//[[:blank:]]/} | tr '[:upper:]' '[:lower:]')
   FILE="$SOURCE/brewfiles/$BUNDLE.rb"
-  [[ "${choices[i]}" ]] && { echo "${bold}===> Install bundle $FILE${normal}"; brew bundle --file $FILE }
+  if [[ "${choices[i]}" ]]; then
+    echo "${bold}===> Install bundle $FILE${normal}"
+    brew bundle --file $FILE
+  fi
 done
 
-# oh-my-zsh
-[[ "${choices2[0]}" ]] && sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
-[[ "${choices2[1]}" ]] && bash ./install-rvm.sh
-[[ "${choices2[2]}" ]] && bash ./install-nvm.sh
+[[ "${choices2[0]}" ]] && bash $SOURCE/cleanup-dock.sh
+
+# oh-my-zsh
+[[ "${choices2[1]}" ]] && sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+[[ "${choices2[2]}" ]] && bash $SOURCE/install-rvm.sh
+[[ "${choices2[3]}" ]] && bash $SOURCE/install-nvm.sh

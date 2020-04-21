@@ -1,7 +1,11 @@
 brew 'git'
 brew 'diff-so-fancy'
-brew 'git-friendly/git-friendly/git-friendly'
-brew 'jesseduffield/lazygit/lazygit'
+
+tap 'git-friendly/git-friendly'
+brew 'git-friendly'
+
+tap 'jesseduffield/lazygit'
+brew 'lazygit'
 
 brew 'wget'
 brew 'pkg-config'
