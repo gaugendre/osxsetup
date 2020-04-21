@@ -30,11 +30,15 @@ cask 'iterm2'
 brew 'ssh-copy-id', link: true
 brew 'autossh'
 brew 'mosh'
+
+cask 'osxfuse'
 brew 'sshfs'
 brew 'mkcert'
+
 brew 'nmap'
 brew 'telnet'
 brew 'namebench'
 brew 'speedtest-cli'
+
 brew 'youtube-dl'
 brew 'rtmpdump'
