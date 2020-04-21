@@ -4,12 +4,16 @@ IFS=$'\n\t'
 
 SOURCE="."
 
+# REPO=${REPO:-gaugendre/osxsetup}
+# BRANCH=${BRANCH:-master}
+# SOURCE=${SOURCE:-https://raw.githubusercontent.com/$REPO/$BRANCH}
+
 # brew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 
 brew tap homebrew/bundle
 brew bundle --file $SOURCE/brewfiles/base.rb
-bash ./cleanup-dock.sh
+bash $SOURCE/cleanup-dock.sh
 
 # https://serverfault.com/questions/144939/multi-select-menu-in-bash-script
 CHECKED="✔"
