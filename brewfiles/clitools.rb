@@ -1,12 +1,5 @@
 brew 'git'
 brew 'diff-so-fancy'
-
-tap 'git-friendly/git-friendly'
-brew 'git-friendly'
-
-tap 'jesseduffield/lazygit'
-brew 'lazygit'
-
 brew 'wget'
 brew 'pkg-config'
 brew 'bash'
