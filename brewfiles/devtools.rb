@@ -45,7 +45,6 @@ brew 'git-friendly'
 tap 'jesseduffield/lazygit'
 brew 'lazygit'
 brew 'hub'
-cask 'kdiff3'
 
 brew 'pgcli'
 brew 'jq'
