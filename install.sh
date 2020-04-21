@@ -133,7 +133,10 @@ done
 [[ "${choices2[0]}" ]] && bash $SOURCE/cleanup-dock.sh
 
 # oh-my-zsh
-[[ "${choices2[1]}" ]] && sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+if [[ "${choices2[1]}" ]]; then
+  sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+  compaudit | xargs chmod g-w,o-w
+fi
 
 [[ "${choices2[2]}" ]] && bash $SOURCE/install-rvm.sh
 [[ "${choices2[3]}" ]] && bash $SOURCE/install-nvm.sh
