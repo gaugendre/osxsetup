@@ -49,7 +49,7 @@ brew 'hub'
 brew 'pgcli'
 brew 'jq'
 brew 'imagemagick'
-brew 'imageoptim'
+cask 'imageoptim'
 brew 'tidy-html5'
 
 cask 'postman'
