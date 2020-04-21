@@ -112,10 +112,12 @@ ask_for_sudo
 [ -x "$(command -v brew)" ] || /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 
 brew tap homebrew/bundle
-brew bundle --file $SOURCE/brewfiles/base.rb
 
 bold=$(tput bold)
 normal=$(tput sgr0)
+
+echo "${bold}===> Install bundle $SOURCE/brewfiles/base.rb${normal}"
+brew bundle --file $SOURCE/brewfiles/base.rb
 
 for i in ${!options[@]}; do
   BUNDLE=$(echo ${options[i]//[[:blank:]]/} | tr '[:upper:]' '[:lower:]')
