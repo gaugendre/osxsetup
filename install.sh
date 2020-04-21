@@ -93,6 +93,21 @@ for i in ${!options2[@]}; do
 done
 echo "$msg"
 
+ask_for_sudo() {
+  # Ask for the administrator password upfront
+  sudo -v
+
+  # Update existing `sudo` time stamp until this script has finished
+  # https://gist.github.com/cowboy/3118588
+  while true; do
+    sudo -n true
+    sleep 60
+    kill -0 "$$" || exit
+  done &> /dev/null &
+}
+
+ask_for_sudo
+
 # homebrew
 [ -x "$(command -v brew)" ] || /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 
