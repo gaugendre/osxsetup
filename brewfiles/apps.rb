@@ -12,6 +12,7 @@ cask 'paragon-ntfs'
 cask 'android-file-transfer'
 
 cask 'libreoffice'
+cask 'libreoffice-language-pack'
 # cask 'station'
 cask 'spotify'
 cask 'clementine'
