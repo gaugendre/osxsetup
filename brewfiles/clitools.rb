@@ -35,3 +35,4 @@ brew 'speedtest-cli'
 
 brew 'youtube-dl'
 brew 'rtmpdump'
+brew 'gifski'
