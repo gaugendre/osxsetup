@@ -1,4 +1,5 @@
 brew 'coreutils'
+brew 'pkg-config'
 
 # editors
 brew 'vim'
