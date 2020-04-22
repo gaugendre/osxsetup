@@ -58,6 +58,7 @@ msg=""
 
 options2=(
   "Cleanup the Dock"
+  "Trackpad and Finder Preferences"
   "Oh My ZSH!"
   "RVM: Ruby Version Manager"
   "nvm: Node Version Manager"
@@ -132,11 +133,13 @@ done
 
 [[ "${choices2[0]}" ]] && bash $SOURCE/cleanup-dock.sh
 
+[[ "${choices2[1]}" ]] && bash $SOURCE/setup-defaults.sh
+
 # oh-my-zsh
-if [[ "${choices2[1]}" ]]; then
+if [[ "${choices2[2]}" ]]; then
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
   compaudit | xargs chmod g-w,o-w
 fi
 
-[[ "${choices2[2]}" ]] && bash $SOURCE/install-rvm.sh
-[[ "${choices2[3]}" ]] && bash $SOURCE/install-nvm.sh
+[[ "${choices2[3]}" ]] && bash $SOURCE/install-rvm.sh
+[[ "${choices2[4]}" ]] && bash $SOURCE/install-nvm.sh
