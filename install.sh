@@ -81,12 +81,8 @@ get_homebrew() {
 }
 
 get_ohmyzsh() {
-  if [ -d "$ZSH" ]; then
-    exit 0
-  else
-    sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" &&
-      zsh -c "compaudit | xargs chmod g-w,o-w"
-  fi
+  [[ -d "$ZSH" ]] ||
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 }
 
 # https://serverfault.com/questions/144939/multi-select-menu-in-bash-script
@@ -200,7 +196,7 @@ if [ ${#scripts[@]} != 0 ]; then
     [[ $option == setup* ]] &&
       execute_bash $SOURCE/setup-defaults.sh
 
-    [[ $option == ohmyzsh* ]] && { get_ohmyzsh }
+    [[ $option == ohmyzsh* ]] && get_ohmyzsh
 
     [[ $option == rvm* ]] &&
       execute_bash $SOURCE/install-rvm.sh
