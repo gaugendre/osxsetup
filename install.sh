@@ -2,13 +2,13 @@
 set -euo pipefail
 IFS=$'\n\t'
 
-REPO=${REPO:-gaugendre/osxsetup}
-BRANCH=${BRANCH:-master}
-
-if [ -t 0 ]; then
-  SOURCE="."
-else
+if [[ ${0##*/} == "bash" ]]; then
+  REPO=${REPO:-gaugendre/osxsetup}
+  BRANCH=${BRANCH:-master}
   SOURCE=${SOURCE:-https://raw.githubusercontent.com/$REPO/$BRANCH}
+else
+  DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+  SOURCE=${SOURCE:-$DIR}
 fi
 
 # string formatters
