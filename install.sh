@@ -2,7 +2,9 @@
 set -euo pipefail
 IFS=$'\n\t'
 
-if [[ ${0##*/} == "bash" ]]; then
+SCRIPT=${0##*/}
+
+if [[ $SCRIPT == "bash" ]]; then
   REPO=${REPO:-gaugendre/osxsetup}
   BRANCH=${BRANCH:-master}
   SOURCE=${SOURCE:-https://raw.githubusercontent.com/$REPO/$BRANCH}
@@ -43,7 +45,7 @@ print_step() {
 execute_bash() {
   print_step "Execute $1"
 
-  if [[ ${0##*/} == "bash" ]]; then
+  if [[ $SCRIPT == "bash" ]]; then
     /bin/bash -c "$(curl -fsSL $1)"
   else
     /bin/bash $1
@@ -53,7 +55,7 @@ execute_bash() {
 homebrew_bundle() {
   print_step "Install bundle $1"
 
-  if [[ ${0##*/} == "bash" ]]; then
+  if [[ $SCRIPT == "bash" ]]; then
     curl -fsSL $1 | brew bundle --file=-
   else
     brew bundle --file $1
