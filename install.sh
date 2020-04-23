@@ -43,20 +43,20 @@ print_step() {
 execute_bash() {
   print_step "Execute $1"
 
-  if [ -t 0 ]; then
-    /bin/bash $1
-  else
+  if [[ ${0##*/} == "bash" ]]; then
     /bin/bash -c "$(curl -fsSL $1)"
+  else
+    /bin/bash $1
   fi
 }
 
 homebrew_bundle() {
   print_step "Install bundle $1"
 
-  if [ -t 0 ]; then
-    brew bundle --file $1
-  else
+  if [[ ${0##*/} == "bash" ]]; then
     curl -fsSL $1 | brew bundle --file=-
+  else
+    brew bundle --file $1
   fi
 }
 
