@@ -3,7 +3,7 @@
 ## interactive mode
 
 ```bash
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/gaugendre/osxsetup/master/install.sh)"
+curl -fsSL https://raw.githubusercontent.com/gaugendre/osxsetup/master/install.sh | bash
 ```
 
 or download / fork
