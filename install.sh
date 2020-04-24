@@ -44,22 +44,24 @@ print_step() {
 
 execute_bash() {
   print_step "Execute $1"
-
+  set +e
   if [[ $SCRIPT == "bash" ]]; then
     /bin/bash -c "$(curl -fsSL $1)"
   else
     /bin/bash $1
   fi
+  set -e
 }
 
 homebrew_bundle() {
   print_step "Install bundle $1"
-
+  set +e
   if [[ $SCRIPT == "bash" ]]; then
     curl -fsSL $1 | brew bundle --file=-
   else
     brew bundle --file $1
   fi
+  set -e
 }
 
 ask_for_sudo() {
@@ -83,8 +85,10 @@ get_homebrew() {
 }
 
 get_ohmyzsh() {
-  [[ -d "$HOME/.oh-my-zsh" ]] ||
+  set +eu
+  [[ -d "$ZSH" ]] ||
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+  set -eu
 }
 
 # https://serverfault.com/questions/144939/multi-select-menu-in-bash-script
