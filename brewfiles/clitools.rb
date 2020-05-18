@@ -24,6 +24,7 @@ brew 'nmap'
 brew 'telnet'
 brew 'namebench'
 brew 'speedtest-cli'
+brew 'wifi-password'
 
 brew 'youtube-dl'
 brew 'rtmpdump'
