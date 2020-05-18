@@ -50,6 +50,7 @@ brew 'hub'
 brew 'pgcli'
 brew 'imagemagick'
 cask 'imageoptim'
+cask 'imagealpha'
 brew 'tidy-html5'
 
 cask 'postman'
