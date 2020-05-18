@@ -48,7 +48,6 @@ brew 'lazygit'
 brew 'hub'
 
 brew 'pgcli'
-brew 'jq'
 brew 'imagemagick'
 cask 'imageoptim'
 brew 'tidy-html5'

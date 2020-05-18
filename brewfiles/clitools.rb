@@ -9,6 +9,8 @@ brew 'p7zip'
 brew 'unrar'
 brew 'xz'
 brew 'htop'
+brew 'ag'
+brew 'jq'
 
 cask 'iterm2'
 
