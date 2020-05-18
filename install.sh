@@ -171,7 +171,7 @@ ask_for_options bundles "APPs/true;Medias;Games;CLI Tools;Virtualization;Dev Too
 
 scripts=()
 print_step "Select your scripts"
-ask_for_options scripts "Cleanup the Dock;Setup some macOS defaults;Oh My ZSH!;RVM: Ruby Version Manager;nvm: Node Version Manager"
+ask_for_options scripts "Cleanup the Dock;Setup some macOS defaults;Oh My ZSH!;RVM: Ruby Version Manager;nvm: Node Version Manager;Vim: The Ultimate vimrc"
 
 # some fomulas may need sudo password
 ask_for_sudo
@@ -209,5 +209,8 @@ if [ ${#scripts[@]} != 0 ]; then
 
     [[ $option == nvm* ]] &&
       execute_bash $SOURCE/install-nvm.sh
+
+    [[ $option == vim* ]] &&
+      execute_bash $SOURCE/install-vimrc.sh
   done
 fi
