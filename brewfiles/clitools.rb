@@ -11,6 +11,7 @@ brew 'xz'
 brew 'htop'
 brew 'ag'
 brew 'jq'
+brew 'fzf'
 
 cask 'iterm2'
 
