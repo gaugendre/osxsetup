@@ -30,15 +30,13 @@ brew 'heroku'
 
 brew 'awscli'
 brew 'aws-elasticbeanstalk', link: false
-brew 'node'
-brew 'ruby'
-brew 'python'
-brew 'yarn'
-brew 'rust'
-brew 'composer'
-cask 'oracle-jdk'
 brew 'ansible'
 brew 'ansible-lint'
+
+brew 'pyenv'
+brew 'yarn'
+brew 'rustup'
+brew 'composer'
 
 # devtools
 tap 'git-friendly/git-friendly'
