@@ -22,3 +22,11 @@ curl -fssL https://raw.githubusercontent.com/gaugendre/osxsetup/master/brewfiles
 curl -fssL https://raw.githubusercontent.com/gaugendre/osxsetup/master/brewfiles/clitools.rb | brew bundle --file=-
 curl -fssL https://raw.githubusercontent.com/gaugendre/osxsetup/master/brewfiles/devtools.rb | brew bundle --file=-
 ```
+
+## boot tips
+
+* boot menu: `alt` + `Power`
+* reset SMC
+  * T2 chip: `right shift` + `ctrl` + `alt` + `Power` wait 10s
+  * macbooks < 2017: `left shift` + `ctrl` + `alt` + `Power` wait 10s
+* reset NVRAM: `cmd` + `alt` + `P`+ `R` wait 2d bell
