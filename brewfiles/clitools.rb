@@ -13,6 +13,7 @@ brew 'ag'
 brew 'jq'
 brew 'fzf'
 brew 'pygments'
+brew 'ccat'
 
 cask 'iterm2'
 
