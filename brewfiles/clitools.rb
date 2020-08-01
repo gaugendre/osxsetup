@@ -12,6 +12,7 @@ brew 'htop'
 brew 'ag'
 brew 'jq'
 brew 'fzf'
+brew 'pygments'
 
 cask 'iterm2'
 
