@@ -14,6 +14,7 @@ brew 'jq'
 brew 'fzf'
 brew 'pygments'
 brew 'ccat'
+brew 'blueutil'
 
 cask 'iterm2'
 
