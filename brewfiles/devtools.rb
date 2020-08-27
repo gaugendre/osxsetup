@@ -20,6 +20,7 @@ cask 'firefox-developer-edition'
 # platform tools
 cask 'docker'
 cask 'podman'
+brew 'skopeo'
 
 tap 'buildpack/tap'
 brew 'pack'
