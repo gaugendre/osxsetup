@@ -26,7 +26,7 @@ cask 'typora'
 
 cask 'skype'
 cask 'slack'
-cask 'teamviewer'
+cask 'anydesk'
 cask 'whatsapp'
 cask 'wire'
 cask 'protonvpn'
