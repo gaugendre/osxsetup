@@ -2,7 +2,7 @@
 cask 'google-chrome'
 cask 'firefox'
 cask 'dropbox'
-cask 'spectacle'
+cask 'rectangle'
 cask 'flux'
 cask 'vlc'
 cask 'iina'
