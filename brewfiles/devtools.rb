@@ -57,6 +57,7 @@ cask 'postman'
 cask 'dbeaver-community'
 cask 'mjml'
 cask 'wireshark'
+cash 'ngrok'
 
 brew 'docker-compose'
 brew 'helm'
