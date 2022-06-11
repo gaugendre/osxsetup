@@ -5,6 +5,9 @@
 # Disable the sound effects on boot
 sudo nvram SystemAudioVolume=" "
 
+# Hide files on desktop
+defaults write com.apple.finder CreateDesktop -bool false
+
 ###############################################################################
 # Trackpad, mouse, keyboard, Bluetooth accessories, and input                 #
 ###############################################################################
