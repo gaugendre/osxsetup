@@ -1,12 +1,12 @@
+# security: disable Gatekeeper
+sudo spctl --global-disable
+
 ###############################################################################
 # General UI/UX                                                               #
 ###############################################################################
 
 # Disable the sound effects on boot
 sudo nvram SystemAudioVolume=" "
-
-# Hide files on desktop
-defaults write com.apple.finder CreateDesktop -bool false
 
 ###############################################################################
 # Trackpad, mouse, keyboard, Bluetooth accessories, and input                 #
@@ -33,6 +33,23 @@ defaults write NSGlobalDomain InitialKeyRepeat -int 10
 # defaults write com.apple.BluetoothAudioAgent "Negotiated Bitpool Max" 80 
 # defaults write com.apple.BluetoothAudioAgent "Negotiated Bitpool Min" 80
 # sudo killall coreaudiod
+
+###############################################################################
+# Screen                                                                      #
+###############################################################################
+
+
+# Save screenshots to the desktop
+# defaults write com.apple.screencapture location -string "$HOME/Desktop"
+
+# Save screenshots in PNG format (other options: BMP, GIF, JPG, PDF, TIFF)
+# defaults write com.apple.screencapture type -string "png"
+
+# Hide all desktop icons because who need 'em'
+defaults write com.apple.finder CreateDesktop -bool false
+
+# Disable shadow in screenshots
+# defaults write com.apple.screencapture disable-shadow -bool false
 
 ###############################################################################
 # Finder                                                                      #
